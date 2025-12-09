@@ -8,15 +8,24 @@ function App() {
 			<SafeAreaView>
 				<Button
 					onPress={async () => {
-						await TrueSheet.present("sheet");
+						await TrueSheet.present("inside");
 					}}
-					title="Open sheet"
+					title="Open sheet inside view"
+				/>
+				<Button
+					onPress={async () => {
+						await TrueSheet.present("outside");
+					}}
+					title="Open sheet outside view"
 				/>
 				<View>
-					<TrueSheet name="sheet" backgroundColor="red">
+					<TrueSheet name="inside" backgroundColor="red">
 						<Text>HELLO</Text>
 					</TrueSheet>
 				</View>
+				<TrueSheet name="outside" backgroundColor="green">
+					<Text>HELLO</Text>
+				</TrueSheet>
 			</SafeAreaView>
 		</SafeAreaProvider>
 	);
